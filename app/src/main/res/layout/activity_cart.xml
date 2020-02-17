@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CartActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:layout_marginBottom="10sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgCartPhoto"
+            android:layout_width="90dp"
+            android:layout_height="120dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCartBookName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:layout_marginStart="10dp"
+                android:text="BookName"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF4500"
+                    android:textStyle="bold"
+                    android:text="$ " />
+
+                <TextView
+                    android:id="@+id/tvCartBookPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF4500"
+                    android:textStyle="bold"
+                    android:text="BookPrice" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:textStyle="bold"
+        android:text="收件者資訊 " />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:layout_marginBottom="10sp"
+        android:hint="購買者姓名"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCartBuyer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:layout_marginBottom="10sp"
+        android:hint="購買者連絡電話"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCartPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:layout_marginBottom="10sp"
+        android:hint="收件地址"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCartAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spCartPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:layout_marginStart="35sp"
+        android:layout_marginEnd="35sp"
+        android:entries="@array/spinner_payment"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:layout_marginStart="35sp"
+        android:layout_marginEnd="35sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCartCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginEnd="10sp"
+            android:layout_weight="1.0"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:backgroundTint="#ff9386"
+            android:textColor="@android:color/white"
+            android:text="取消購買" />
+
+        <Button
+            android:id="@+id/btnCart"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1.0"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            android:text="確定購買" />
+
+    </LinearLayout>
+
+</LinearLayout>

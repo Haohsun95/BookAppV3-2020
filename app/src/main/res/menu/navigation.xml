@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigationHome"
+        android:icon="@mipmap/outline_home_white_18"
+        android:title="@string/title_home"/>
+
+    <item
+        android:id="@+id/navigationFavorite"
+        android:icon="@mipmap/outline_favorite_border_white_18"
+        android:title="@string/title_favorite"/>
+
+    <item
+        android:id="@+id/navigationMember"
+        android:icon="@mipmap/outline_dashboard_white_18"
+        android:title="@string/title_member"/>
+
+</menu>
