@@ -14,6 +14,7 @@ class PostDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post_detail)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val detailBookUID = intent.getStringExtra("bookUID")
         val detailBookName = intent.getStringExtra("bookName")
         val detailBookOPrice = intent.getStringExtra("bookOPrice")
@@ -25,6 +26,7 @@ class PostDetailActivity : AppCompatActivity() {
         val detailUserID = intent.getStringExtra("userID")
         val detailBookTimeStamp = intent.getStringExtra("bookTimeStamp")
         val detailBookIsSold = intent.getStringExtra("bookIsSold")
+        supportActionBar?.title = detailBookName
 
         tvDetailBookName.text = detailBookName
         tvDetailBookOPrice.text = detailBookOPrice
@@ -48,5 +50,10 @@ class PostDetailActivity : AppCompatActivity() {
             intent.putExtra("bookUserID",detailUserID)
             startActivity(intent)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 }

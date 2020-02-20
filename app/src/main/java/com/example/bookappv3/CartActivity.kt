@@ -18,6 +18,9 @@ class CartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "購物車"
+
         val cartBookUID = intent.getStringExtra("bookUID")
         val cartBookName = intent.getStringExtra("bookName")
         val cartBookPrice = intent.getStringExtra("bookPrice")
@@ -86,6 +89,11 @@ class CartActivity : AppCompatActivity() {
             finish()
         }
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     private fun updateAuctionStatus(){

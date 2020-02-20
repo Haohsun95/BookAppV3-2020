@@ -46,6 +46,9 @@ class AuctionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auction)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "即時拍"
+
         btnSelectBookPhoto.setOnClickListener {
             requestPermission()
         }
@@ -57,6 +60,11 @@ class AuctionActivity : AppCompatActivity() {
         btnAuctionCancel.setOnClickListener {
             finish()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     private fun takePhoto(){

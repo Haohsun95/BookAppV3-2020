@@ -27,6 +27,9 @@ class SendManagementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_management)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "登錄出貨系統"
+
         cartSendRecyclerView.setHasFixedSize(true)
         cartSendRecyclerView.layoutManager = LinearLayoutManager(this)
         setupAdapter()
@@ -37,6 +40,11 @@ class SendManagementActivity : AppCompatActivity() {
 
         cMAdapter.startListening()
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     override fun onStop() {

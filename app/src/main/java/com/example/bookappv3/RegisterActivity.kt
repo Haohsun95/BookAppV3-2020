@@ -18,10 +18,18 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "會員註冊"
+
         btnRegister.setOnClickListener {
             progressBarRegister.visibility = View.VISIBLE
             performRegister()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     private fun performRegister(){
@@ -31,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
         val phoneNumber = etPhoneNumber.text.toString()
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || phoneNumber.isEmpty()){
-            KToasty.warning(this,"註冊資訊不完整!", Toast.LENGTH_SHORT, true).show()
+            KToasty.warning(this,"註冊資訊不完整", Toast.LENGTH_SHORT, true).show()
             return
         }
 
@@ -41,7 +49,7 @@ class RegisterActivity : AppCompatActivity() {
                     Log.d("Main", "Successful: ${it.result?.user?.uid}")
                     //  將user註冊資訊傳至Database
                     saveUserToFirebaseDatabase()
-                    KToasty.success(this,"完成註冊!"+password, Toast.LENGTH_SHORT, true).show()
+                    KToasty.success(this,"Success", Toast.LENGTH_SHORT, true).show()
                     // 回至登入頁面
                     progressBarRegister.visibility = View.GONE
                     val intent = Intent(this, LoginActivity::class.java)
@@ -53,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener {
-                KToasty.error(this,"格式錯誤!", Toast.LENGTH_SHORT, true).show()
+                KToasty.error(this,"Error", Toast.LENGTH_SHORT, true).show()
             }
     }
 

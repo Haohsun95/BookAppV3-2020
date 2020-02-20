@@ -7,37 +7,6 @@
     android:orientation="vertical"
     tools:context=".MemberFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnReceiveManagement"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginEnd="10sp"
-            android:layout_weight="1.0"
-            android:textSize="14sp"
-            android:background="@drawable/btn_shape"
-            android:textColor="@android:color/white"
-            android:text="登錄取貨系統" />
-
-        <Button
-            android:id="@+id/btnSendManagement"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_weight="1.0"
-            android:textSize="14sp"
-            android:background="@drawable/btn_shape"
-            android:textColor="@android:color/white"
-            android:text="登錄出貨系統" />
-
-    </LinearLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +18,7 @@
         android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
@@ -68,25 +38,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="10sp"
-                    android:text="使用者名稱"
-                    android:textSize="14sp" />
-
-                <TextView
                     android:id="@+id/tvProfileName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15sp"
                     android:layout_marginTop="10sp"
-                    android:layout_marginBottom="10sp"
-                    android:drawableEnd="@mipmap/baseline_settings_white_18"
-                    android:drawableTint="@android:color/darker_gray"
-                    android:gravity="end"
-                    android:textSize="14sp" />
+                    android:text="使用者名稱"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -94,54 +53,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="10sp"
-                    android:text="電子信箱"
-                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tvProfileEmail"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15sp"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginTop="5sp"
                     android:layout_marginBottom="10sp"
-                    android:drawableEnd="@mipmap/baseline_settings_white_18"
-                    android:drawableTint="@android:color/darker_gray"
-                    android:gravity="end"
+                    android:text="Email"
                     android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15sp"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginTop="5sp"
                     android:layout_marginBottom="10sp"
-                    android:text="手機號碼"
+                    android:text="/"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tvProfilePhone"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15sp"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginTop="5sp"
                     android:layout_marginBottom="10sp"
-                    android:drawableEnd="@mipmap/baseline_settings_white_18"
-                    android:drawableTint="@android:color/darker_gray"
                     android:gravity="end"
+                    android:text="手機號碼"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -156,8 +96,51 @@
         android:layout_marginTop="10sp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:text="上架商品"
+        android:text="系統管理"
         android:textSize="14sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnReceiveManagement"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginEnd="5sp"
+            android:layout_weight="1.0"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            android:text="登錄取貨系統" />
+
+        <Button
+            android:id="@+id/btnSendManagement"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1.0"
+            android:layout_marginEnd="5sp"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            android:text="登錄出貨系統" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:text="我的商品"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
 
 </LinearLayout>

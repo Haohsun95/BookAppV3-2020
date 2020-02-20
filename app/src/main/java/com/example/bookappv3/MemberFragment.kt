@@ -40,7 +40,10 @@ class MemberFragment : Fragment() {
             tvProfileName?.text = profileName
             tvProfileEmail?.text = profileEmail
             tvProfilePhone?.text = profilePhone
+        }
 
+        cvProfile.setOnClickListener {
+            KToasty.info(this.requireContext(), "測試", Toast.LENGTH_SHORT, true).show()
         }
 
         btnReceiveManagement.setOnClickListener {
@@ -52,7 +55,6 @@ class MemberFragment : Fragment() {
             val intentSendM = Intent(this.requireContext(), SendManagementActivity::class.java)
             startActivity(intentSendM)
         }
-
 
     }
 

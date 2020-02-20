@@ -8,6 +8,8 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -92,6 +94,18 @@ class MainActivity : AppCompatActivity() {
         if (id == R.id.action_add_auction) {
             val intent = Intent(this, AuctionActivity::class.java)
             startActivity(intent)
+            return true
+        }
+        if (id == R.id.action_exit_app){
+            MaterialAlertDialogBuilder(this)
+                .setTitle("提醒")
+                .setMessage("確定要登出？")
+                .setPositiveButton("確定"){dialogInterface, i ->
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    FirebaseAuth.getInstance().signOut()
+                }.setNegativeButton("取消",null).show()
+
             return true
         }
 

@@ -15,6 +15,9 @@ class SendDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_detail)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "訂單明細"
+
         val bookName = intent.getStringExtra("bookName")
         val bookPrice = intent.getStringExtra("bookPrice")
         val bookUID = intent.getStringExtra("bookUID")
@@ -58,5 +61,10 @@ class SendDetailActivity : AppCompatActivity() {
         }else{
             btnUpdateSendCart.isEnabled = true
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 }

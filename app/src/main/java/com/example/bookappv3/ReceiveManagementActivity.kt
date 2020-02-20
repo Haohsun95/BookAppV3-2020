@@ -28,6 +28,9 @@ class ReceiveManagementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receive_management)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "登錄取貨系統"
+
         cartReceiveRecyclerView.setHasFixedSize(true)
         cartReceiveRecyclerView.layoutManager = LinearLayoutManager(this)
         setupAdapter()
@@ -38,6 +41,11 @@ class ReceiveManagementActivity : AppCompatActivity() {
 
         cAdapter.startListening()
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     override fun onStop() {
@@ -96,4 +104,5 @@ class ReceiveManagementActivity : AppCompatActivity() {
             }
         }
     }
+
 }
